@@ -11,6 +11,7 @@
     <OutputPath>.</OutputPath>
     <Name>ex2-5</Name>
     <RootNamespace>ex2-5</RootNamespace>
+    <InterpreterId>MSBuild|env2-5|$(MSBuildProjectFullPath)</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,6 +23,26 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="ex2_5.py" />
+    <Compile Include="mpfunction.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="myfunclib.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="thfunction.py">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env2-5\">
+      <Id>env2-5</Id>
+      <Version>3.6</Version>
+      <Description>env2-5 (Python 3.6 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
