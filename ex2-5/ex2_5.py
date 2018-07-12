@@ -3,7 +3,6 @@ import subprocess
 
 import myfunclib
 import mpfunction
-import thfunction
 
 def convert_files(in_dir, out_dir, file_name):
     in_file = os.path.join(in_dir, file_name)
@@ -22,6 +21,3 @@ if __name__ == '__main__':
    
     print("multiprocessing")
     mpfunction.mpmain(dir_list)
-    print("threads")
-    thfunction.thmain(dir_list)
-
